@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DemoTest {
     @Test
     public void testReflection() {
-        Demo demo = new Demo(1,"6");
+        Demo demo = new Demo(1, "6");
         System.out.println(demo);
 
         // 方式一
@@ -26,7 +26,7 @@ public class DemoTest {
         try {
             Field field = demoClass.getField("x");
             Options fieldAnnotation = field.getAnnotation(Options.class);
-            System.out.println("字段注解: "+ fieldAnnotation.value());
+            System.out.println("字段注解: " + fieldAnnotation.value());
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
@@ -34,7 +34,7 @@ public class DemoTest {
         // 获取类所有方法
         Method[] methods = demoClass.getMethods();
         ArrayList<String> strings = new ArrayList<>();
-        for (Method method: methods){
+        for (Method method : methods) {
             strings.add(method.getName());
         }
         System.out.println(strings);
