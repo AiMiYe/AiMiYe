@@ -15,6 +15,33 @@
 12. **@Test(groups = "server")**: 该注解表示对测试用例进行分组, 需要指定组名
 13. **@BeforeGroups(groups = "server")**: 该注解表示该组测试用例执行**之前**的方法
 14. **@AfterGroups(groups = "server")**: 该注解表示该组测试用例执行**之后**的方法
+15. **@Test(expectedExceptions = NullPointerException.class)**: 该注解表示该测试用例执行**之后**存在**预期的异常**
+16. **@Test(dependsOnMethods ={ "testCase1", "testCase3"})**: 该注解表示:运行修饰的测试用例时会先执行依赖的测试用例, 如果依赖的测试**都**执行成功, 则会执行修饰的测试用例. 否则忽略修饰的测试用例; 如果所依赖的多个测试用例,依赖的测试用例之间相互独立互不不影响
+
+### TestNG注解执行顺序
+
+```java
+/**
+ * TestNG测试注解执行顺序:
+ * BeforeSuite
+ * 	   ↓
+ * BeforeTest
+ *     ↓
+ * BeforeClass
+ *     ↓
+ * BeforeMethod
+ *     ↓
+ *    Test
+ *     ↓
+ * AfterMethod
+ *     ↓
+ * AfterClass
+ *     ↓
+ * AfterTest
+ *     ↓
+ * AfterSuite
+ */
+```
 
 ### TestNG配置文件
 
