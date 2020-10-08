@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.course</groupId>
-    <artifactId>chapter2</artifactId>
+    <artifactId>chapter</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.0.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-
+    <modules>
+        <module>chapter1</module>
+        <module>chapter2</module>
+    </modules>
 </project>
