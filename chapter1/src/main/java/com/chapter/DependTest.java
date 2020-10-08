@@ -8,7 +8,7 @@ public class DependTest {
         System.out.println("运行 testCase1 测试用例---");
     }
 
-    @Test(dependsOnMethods ={ "testCase1", "testCase3",  "testCase4"}) // 该注解表示:执行
+    @Test(dependsOnMethods ={ "testCase1", "testCase3",  "testCase4"}) // 该注解表示: 执行依赖测试用例
     public void testCase2(){
         System.out.println("运行 testCase2 测试用例---");
     }
