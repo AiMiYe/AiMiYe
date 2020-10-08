@@ -3,6 +3,7 @@
 
 <suite name="parameter">
     <test name="param">
+<!--        标签parameter表示: 测试用例运行是需要的参数. 必须执行name与value属性, 其中name属性与测试用例中需要的形参名一致; value为参数的值-->
         <parameter name="x" value="5"/>
         <parameter name="y" value="6"/>
         <parameter name="expected" value="11"/>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<!--
+    参数 parallel: 表示线程级别.
+        methods级别: 每一个 测试用例方法 都运行在不同的线程中
+        tests级别: 每一个 test标签(xml文件中) 都运行在不同的线程中
+        classes级别:
+-->
+<!--参数 thread-count: 表示最大线程数. 注意: 此处线程数<=类中的测试用例数-->
+<suite name="thread" parallel="classes" thread-count="2">
+    <test name="threading1">
+        <classes>
+            <class name="com.chapter1.thread.MultithreadingTestOnXml1"/>
+        </classes>
+    </test>
+
+    <test name="threading2">
+        <classes>
+            <class name="com.chapter1.thread.MultithreadingTestOnXml2"/>
+        </classes>
+    </test>
+</suite>

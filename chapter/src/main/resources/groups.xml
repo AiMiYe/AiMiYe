@@ -11,12 +11,16 @@
 <!--    </test>-->
 
     <test name="runStudent">
-<!--    分组运行测试用例    -->
+<!--     标签groups表示: 指定需要运行的分组-->
         <groups>
+<!--         标签run表示: 运行指定组测试用例  -->
             <run>
-<!--             指定运行的分组   -->
+<!--             指定运行的分组名   -->
                 <include name="student"/>
             </run>
+<!--            <run>-->
+<!--                <include name="teacher" />-->
+<!--            </run>-->
         </groups>
         <classes>
             <class name="com.chapter1.groups.StudentTest"/>

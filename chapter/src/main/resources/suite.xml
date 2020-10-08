@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<!--标签suite表示: 测试套件. 必须要定义name属性-->
 <suite name="testSuite">
+<!--    标签test表示: 测试用例. 必须要定义name属性-->
     <test name="testLogin">
+<!--        标签classes表示: 需要加载运行的类-->
         <classes>
+<!--            标签class表示: 指定需要加载运行具体的类. name属性为类的包路径-->
             <class name="com.chapter1.suite.SuiteConfig"/>
             <class name="com.chapter1.suite.LoginTest"/>
         </classes>
