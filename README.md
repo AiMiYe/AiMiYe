@@ -1,4 +1,25 @@
 ## TestNG测试框架学习记录
+
+## Maven项目引入TestNG包
+
+1. 官方网站下载TestNG包: https://mvnrepository.com/artifact/org.testng/testng
+
+2. IDEA引入TestNG包
+
+3. pom.xml配置文件新增
+
+   ```xml
+   <dependencies>
+       <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+       <dependency>
+           <groupId>org.testng</groupId>
+           <artifactId>testng</artifactId>
+           <version>7.0.0</version>
+           <scope>test</scope>
+       </dependency>
+   </dependencies>
+   ```
+
 ### TestNG基础注解讲解
 
 1. **@Test**: 该注解表示所修饰方法是: 最基础测试方法
@@ -19,3 +40,8 @@
 16. **@Test(dependsOnMethods ={ "testCase1", "testCase3"})**: 该注解表示:运行修饰的测试用例时会先执行依赖的测试用例, 如果依赖的测试**都**执行成功, 则会执行修饰的测试用例. 否则忽略修饰的测试用例; 如果所依赖的多个测试用例,依赖的测试用例之间相互独立互不不影响
 17. **@Test(invocationCount = 15, threadPoolSize = 5)**: 该注解表示使用多线程执行该测试用例. 注意: 需要指定线程数大小以及线程池大小
 18. **@Test(timeOut = 3000)**:  该注解表示超时测试用例, 时间单位毫秒. 超过超时时间, 测试用例判定失败
+
+## TestNG集成'ExtentReport'生成测试报告
+
+1. 
+

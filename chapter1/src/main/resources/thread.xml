@@ -11,13 +11,13 @@
 <suite name="thread" parallel="classes" thread-count="2">
     <test name="threading1">
         <classes>
-            <class name="com.chapter1.thread.MultithreadingTestOnXml1"/>
+            <class name="com.chapter.thread.MultithreadingTestOnXml1"/>
         </classes>
     </test>
 
     <test name="threading2">
         <classes>
-            <class name="com.chapter1.thread.MultithreadingTestOnXml2"/>
+            <class name="com.chapter.thread.MultithreadingTestOnXml2"/>
         </classes>
     </test>
 </suite>

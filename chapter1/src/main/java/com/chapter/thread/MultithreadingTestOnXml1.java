@@ -1,4 +1,4 @@
-package com.chapter1.thread;
+package com.chapter.thread;
 
 import org.testng.annotations.Test;
 

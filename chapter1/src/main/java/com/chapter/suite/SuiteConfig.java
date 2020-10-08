@@ -1,4 +1,4 @@
-package com.chapter1.suite;
+package com.chapter.suite;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;

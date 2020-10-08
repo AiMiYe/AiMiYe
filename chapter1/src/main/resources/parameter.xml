@@ -8,7 +8,7 @@
         <parameter name="y" value="6"/>
         <parameter name="expected" value="11"/>
         <classes>
-            <class name="com.chapter1.parameter.ParameterTest"/>
+            <class name="com.chapter.parameter.ParameterTest"/>
         </classes>
     </test>
 </suite>

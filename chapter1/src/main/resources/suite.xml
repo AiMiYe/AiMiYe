@@ -8,15 +8,15 @@
 <!--        标签classes表示: 需要加载运行的类-->
         <classes>
 <!--            标签class表示: 指定需要加载运行具体的类. name属性为类的包路径-->
-            <class name="com.chapter1.suite.SuiteConfig"/>
-            <class name="com.chapter1.suite.LoginTest"/>
+            <class name="com.chapter.suite.SuiteConfig"/>
+            <class name="com.chapter.suite.LoginTest"/>
         </classes>
     </test>
 
     <test name="testPay">
         <classes>
-            <class name="com.chapter1.suite.SuiteConfig" />
-            <class name="com.chapter1.suite.PayTest" />
+            <class name="com.chapter.suite.SuiteConfig" />
+            <class name="com.chapter.suite.PayTest" />
         </classes>
     </test>
 

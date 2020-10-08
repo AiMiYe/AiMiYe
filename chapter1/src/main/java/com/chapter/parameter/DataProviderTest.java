@@ -1,4 +1,4 @@
-package com.chapter1.parameter;
+package com.chapter.parameter;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;

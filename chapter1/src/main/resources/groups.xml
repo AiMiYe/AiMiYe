@@ -23,8 +23,8 @@
 <!--            </run>-->
         </groups>
         <classes>
-            <class name="com.chapter1.groups.StudentTest"/>
-            <class name="com.chapter1.groups.TeacherTest"/>
+            <class name="com.chapter.groups.StudentTest"/>
+            <class name="com.chapter.groups.TeacherTest"/>
         </classes>
     </test>
 </suite>
