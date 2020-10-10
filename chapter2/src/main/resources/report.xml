@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<suite name="testReport!">
+    <test name="report">
+        <classes>
+            <class name="com.report.TestReport"/>
+<!--         添加需要监听的测试用例(测试报告中显示的测试用例执行信息)-->
+            <methods>
+                <include name="testAdd"/>
+                <include name="testLog"/>
+            </methods>
+        </classes>
+    </test>
+<!-- 选择测试报告监听类-->
+    <listeners>
+<!--        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>-->
+        <listener class-name="com.listener.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>
