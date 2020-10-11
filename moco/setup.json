@@ -1,0 +1,170 @@
+[
+  {
+    "description": "第一个moco接口示例!",
+    "request": {
+      "uri": "/setup",
+      "method": "get"
+    },
+    "response": {
+      "text": "第一个moco接口响应示例!",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "模拟http 不带参数的get请求",
+    "request": {
+      "uri": "/get",
+      "method": "get"
+    },
+    "response": {
+      "text": "这是一个不带参数的get请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "模拟http 带参数的get请求",
+    "request": {
+      "uri": "/get/param",
+      "method": "get",
+      "queries": {
+        "name": "moco",
+        "version": "0.12.0"
+      }
+    },
+    "response": {
+      "text": "这是一个带参数的get请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "配置一个post请求",
+    "request": {
+      "uri": "/post",
+      "method": "post"
+    },
+    "response": {
+      "text": "这是一个不带参数的post请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "配置一个带有参数的post请求",
+    "request": {
+      "uri": "/post/param",
+      "method": "post",
+      "forms": {
+        "username": "moco",
+        "password": "0.12.0"
+      }
+    },
+    "response": {
+      "text": "这是一个带参数的post请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "配置一个带有cookie信息的get请求",
+    "request": {
+      "uri": "/get/cookie",
+      "method": "get",
+      "cookies": {
+        "isLogin": "true"
+      }
+    },
+    "response": {
+      "text": "这是一个带有cookie信息的给请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "配置一个带有参数, cookie的post请求",
+    "request": {
+      "uri": "/post/cookie",
+      "method": "post",
+      "cookies": {
+        "isLogin": "false"
+      },
+      "json": {
+        "username": "moco",
+        "password": "0.12.0"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "code": "1",
+        "msg": "登陆成功",
+        "cookie": "true"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "配置一个带有参数, header的post请求",
+    "request": {
+      "uri": "/post/header",
+      "method": "post",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "cookies": {
+        "isLogin": "false"
+      },
+      "json": {
+        "username": "moco",
+        "password": "0.12.0"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "code": "1",
+        "msg": "登陆成功",
+        "cookie": "true"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "接口重定向",
+    "request": {
+      "uri": "/redirect",
+      "method": "get"
+    },
+    "redirectTo": "https://www.baidu.com/",
+    "response": {
+      "text": "页面重定向",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "返回图片接口",
+    "request": {
+      "uri": "/img"
+    },
+    "response": {
+      "file": "E:\\Files\\性能需求.png",
+      "headers": {
+        "Content-Type": "image/jpeg"
+      }
+    }
+  }
+]
