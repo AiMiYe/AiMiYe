@@ -154,17 +154,5 @@
         "Content-Type": "text/html;charset=gbk"
       }
     }
-  },
-  {
-    "description": "返回图片接口",
-    "request": {
-      "uri": "/img"
-    },
-    "response": {
-      "file": "E:\\Files\\性能需求.png",
-      "headers": {
-        "Content-Type": "image/jpeg"
-      }
-    }
   }
 ]

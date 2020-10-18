@@ -1,0 +1,111 @@
+[
+  {
+    "description": "用户登陆接口!",
+    "request": {
+      "uri": "/login/param",
+      "method": "get",
+      "queries": {
+        "username": "13668200771",
+        "password": "admin123456"
+      }
+    },
+    "response": {
+      "status": 200,
+      "cookies": {
+        "islogin": "true"
+      },
+      "json": {
+        "code": "0",
+        "message": "登陆成功!",
+        "token": "20201012200627"
+      },
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "用户登陆接口!",
+    "request": {
+      "uri": "/login",
+      "method": "get"
+    },
+    "response": {
+      "status": 200,
+      "cookies": {
+        "islogin": "true"
+      },
+      "json": {
+        "code": "0",
+        "message": "登陆成功!",
+        "token": "20201012200627"
+      },
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "获取用户信息接口",
+    "request": {
+      "uri": "/getUser",
+      "method": "get",
+      "cookies": {
+        "islogin": "true"
+      }
+    },
+    "response": {
+      "json": {
+        "username": "13668200771",
+        "password": "admin123456",
+        "name": "configuration"
+      }
+    }
+  },
+  {
+    "description": "用户登陆接口!",
+    "request": {
+      "uri": "/post/param",
+      "method": "post",
+      "forms": {
+        "username": "13668200771",
+        "password": "admin123456"
+      }
+    },
+    "response": {
+      "status": 200,
+      "cookies": {
+        "islogin": "true"
+      },
+      "json": {
+        "code": "0",
+        "message": "登陆成功!",
+        "token": "20201012200627"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "用户登陆接口!",
+    "request": {
+      "uri": "/post",
+      "method": "post"
+    },
+    "response": {
+      "status": 200,
+      "cookies": {
+        "islogin": "true"
+      },
+      "json": {
+        "code": "0",
+        "message": "登陆成功!",
+        "token": "20201012200627"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=gbk"
+      }
+    }
+  }
+]

@@ -6,7 +6,7 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-.idea/
-.chapter1/target/
-.chapter2/target/
-.chapter2/test-output/
+idea/
+chapter1/target/
+chapter2/target/
+chapter2/test-output/
