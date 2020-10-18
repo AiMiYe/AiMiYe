@@ -88,23 +88,52 @@
     }
   },
   {
-    "description": "用户登陆接口!",
+    "description": "使用token接口获取用户信息!",
     "request": {
-      "uri": "/post",
-      "method": "post"
+      "uri": "/postUser",
+      "method": "get",
+      "cookies": {
+        "token": "20201012200627"
+      }
     },
     "response": {
       "status": 200,
-      "cookies": {
-        "islogin": "true"
-      },
       "json": {
-        "code": "0",
-        "message": "登陆成功!",
-        "token": "20201012200627"
+        "username": "13668200771",
+        "password": "admin123456",
+        "name": "configuration"
       },
       "headers": {
-        "Content-Type": "application/json;charset=gbk"
+        "Content-Type": "application/json;charset=GBK"
+      }
+    }
+  },
+  {
+    "description": "获取登陆token接口!",
+    "request": {
+      "uri": "/post",
+      "method": "post",
+      "json": {
+        "username": "admin",
+        "password": "admin123456"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "code": "0",
+        "content": {
+          "message": "登陆成功",
+          "token": "20201012200627"
+        },
+        "list": [
+          1,
+          5,
+          8
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=GBK"
       }
     }
   }
