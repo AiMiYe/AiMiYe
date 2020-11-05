@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: mysqls
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.223.128:3306/zoo
+    username: root
+    password: Admin==ni5695
+mybatis:
+  type-aliases-package: com.datasource
+  mapper-locations:
+    - mapper/*
+logging:
+  file:
+    path: logs
+    name: logs.log
+
+
