@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Objects;
 
 @RestController
+@RequestMapping(value = "/get")
 public class GetMethods {
     // HttpServletResponse: 存放响应信息的类
     // HttpServletRequest: 存放请求信息的类

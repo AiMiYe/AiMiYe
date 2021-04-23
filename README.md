@@ -45,7 +45,7 @@
 
 1. 启动命令
 
-   java -jar ./moco-runner-12.jar 协议 -p 端口号 -c json配置文件
+   java -jar ./moco-12.jar 协议 -p 端口号 -c json配置文件
    
 2. json文件解析:
 
