@@ -6,7 +6,7 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-idea/
+.idea/
 chapter1/target/
 chapter2/target/
 chapter2/test-output/
@@ -17,3 +17,8 @@ chapter4/src/test/
 chapter5/src/main/java/com/jvm/
 chapter5/src/test/
 chapter5/target/
+chapter1/chapter1.iml
+chapter2/chapter2.iml
+chapter3/chapter3.iml
+chapter4/chapter4.iml
+chapter5/chapter5.iml
