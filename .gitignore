@@ -10,3 +10,10 @@ idea/
 chapter1/target/
 chapter2/target/
 chapter2/test-output/
+chapter2/src/test/
+chapter3/src/test/
+chapter3/target/
+chapter4/src/test/
+chapter5/src/main/java/com/jvm/
+chapter5/src/test/
+chapter5/target/
