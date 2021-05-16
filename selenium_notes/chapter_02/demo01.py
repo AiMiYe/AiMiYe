@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 from PIL import Image
-import pytesseract
+import pytesseract as pt
 
 # with webdriver.Chrome(executable_path=r"../drivers/chromedriver89.exe") as driver:
 #     name = str(int(time.time())) + ".png"
@@ -20,5 +20,7 @@ import pytesseract
 #     im.save(name)
 
 if __name__ == '__main__':
-    st = pytesseract.image_to_string("E:/PyFiles/selenium_notes/chapter_02/1620396175.png")
-    print(st)
+    ex = r"D:\TesseractOCR\tesseract.exe"
+    pt.pytesseract.tesseract_cmd = ex
+    img = Image.open("code.png")
+    print(pt.image_to_string(img, lang="eng"))
