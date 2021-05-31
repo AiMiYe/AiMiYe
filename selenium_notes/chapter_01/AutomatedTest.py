@@ -32,19 +32,6 @@ class SecPackage(object):
         except Exception as msg:
             print(f"Error:{msg}")
 
-    def find_element(self, locator):
-        """
-         定位单个元素
-        """
-        element = WebDriverWait(self.__driver, self.__time_out, 1).until(EC.presence_of_element_located(locator))
-        return element
-
-    def find_elements(self, locator):
-        """
-         定位多个元素
-        """
-        element = WebDriverWait(self.__driver, self.__time_out, 1).until(EC.presence_of_all_elements_located(locator))
-        return element
 
     def click_element(self, locator):
         """
@@ -199,11 +186,7 @@ class SecPackage(object):
         """
         self.__driver.implicitly_wait(self.__time_out)
 
-    def mix_window(self):
-        """
-        浏览器窗口最大化
-        """
-        self.__driver.minimize_window()
+
 
     def back(self):
         """
