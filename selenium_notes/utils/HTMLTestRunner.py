@@ -94,7 +94,7 @@ Version in 0.8.0
 
 Version in 0.7.1
 * Back port to Python 2.3 (Frank Horowitz).
-* Fix missing scroll bars in detail log (Podi).
+* Fix missing scroll bars in detail logs (Podi).
 """
 
 # TODO: color stderr
@@ -219,7 +219,7 @@ class Template_mixin(object):
     output_list = Array();
 
     /* level - 0:Summary; 1:Failed; 2:All */
-    console.log(data)
+    console.logs(data)
     function showCase(level) {
         trs = document.getElementsByTagName("tr");
         for (var i = 2; i < trs.length; i++) {
@@ -375,14 +375,14 @@ class Template_mixin(object):
             if ( data[j]["error"] === undefined) {
                 data[j]["error"] = 0
             }
-            console.log(data[j]["success"], data[j]["fail"],data[j]["error"])
+            console.logs(data[j]["success"], data[j]["fail"],data[j]["error"])
             let totle = Number(data[j]["success"])+Number(data[j]["fail"])+Number(data[j]["error"]);
-            console.log(totle)
+            console.logs(totle)
             successrate.push((Number(data[j]["success"])/totle)*100);
             failrate.push((Number(data[j]["fail"])/totle)*100);
             errorrate.push((Number(data[j]["error"])/totle)*100)
         }
-        console.log(successrate, failrate, errorrate)
+        console.logs(successrate, failrate, errorrate)
         let myChartline = echarts.init(document.getElementById('chartline'));
         // 绘制图表
         let optionline = {
@@ -461,7 +461,7 @@ class Template_mixin(object):
     }
     function changeResult(obj) {
         var objSelectet = document.getElementById("testTime");
-        console.log(data[objSelectet.value])
+        console.logs(data[objSelectet.value])
         document.getElementById("title").innerText=data[objSelectet.value]["title"];
         document.getElementsByClassName("attribute")[0].innerHTML='<strong>开始时间：</strong>'+data[objSelectet.value]["startTime"];
         document.getElementsByClassName("attribute")[1].innerHTML='<strong>运行时长：</strong>'+data[objSelectet.value]["duration"];

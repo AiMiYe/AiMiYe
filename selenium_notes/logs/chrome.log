@@ -1,0 +1,148 @@
+[1622210020.155][INFO]: Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 5453
+[1622210020.155][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1622210020.684][INFO]: [22b618674c1be46740e673ab1c09aee0] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         },
+         "platformName": "any"
+      },
+      "firstMatch": [ {
+
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [  ],
+         "extensions": [  ]
+      },
+      "platform": "ANY",
+      "version": ""
+   }
+}
+[1622210020.689][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1622210020.690][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1622210020.694][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --log-level=0 --no-first-run --no-service-autorun --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\Mi\AppData\Local\Temp\scoped_dir2996_1214952966" data:,
+[1622210021.300][WARNING]: This version of ChromeDriver has not been tested with Chrome version 90.
+[1622210021.306][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1622210021.311][INFO]: [22b618674c1be46740e673ab1c09aee0] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "90.0.4430.93",
+      "chrome": {
+         "chromedriverVersion": "89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294})",
+         "userDataDir": "C:\\Users\\Mi\\AppData\\Local\\Temp\\scoped_dir2996_1214952966"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:5459"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:largeBlob": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "22b618674c1be46740e673ab1c09aee0"
+}
+[1622210021.313][INFO]: [22b618674c1be46740e673ab1c09aee0] COMMAND Navigate {
+   "url": "https://www.baidu.com/"
+}
+[1622210021.313][INFO]: Waiting for pending navigations...
+[1622210021.315][INFO]: Done waiting for pending navigations. Status: ok
+[1622210021.481][INFO]: Waiting for pending navigations...
+[1622210021.916][INFO]: Done waiting for pending navigations. Status: ok
+[1622210021.916][INFO]: [22b618674c1be46740e673ab1c09aee0] RESPONSE Navigate
+[1622210021.917][INFO]: [22b618674c1be46740e673ab1c09aee0] COMMAND SetWindowRect {
+   "height": 300,
+   "width": 100,
+   "x": null,
+   "y": null
+}
+[1622210021.917][INFO]: Waiting for pending navigations...
+[1622210021.917][INFO]: Done waiting for pending navigations. Status: ok
+[1622210021.918][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1622210022.035][INFO]: Waiting for pending navigations...
+[1622210022.056][INFO]: Done waiting for pending navigations. Status: ok
+[1622210022.056][INFO]: [22b618674c1be46740e673ab1c09aee0] RESPONSE SetWindowRect {
+   "height": 300,
+   "width": 516,
+   "x": 10,
+   "y": 10
+}
