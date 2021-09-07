@@ -1,0 +1,32 @@
+{
+  "success": "1",
+  "result": {
+    "weaid": "1",
+    "days": "2021-06-05",
+    "success": "2",
+    "week": "星期六",
+    "cityno": "beijing",
+    "citynm": "北京",
+    "cityid": "101010100",
+    "temperature": "33℃/18℃",
+    "temperature_curr": "28℃",
+    "humidity": "20%",
+    "aqi": "26",
+    "weather": "多云",
+    "weather_curr": "晴",
+    "weather_icon": "http://api.k780.com/upload/weather/d/0.gif",
+    "weather_icon1": "",
+    "wind": "西北风",
+    "winp": "2级",
+    "temp_high": "33",
+    "temp_low": "18",
+    "temp_curr": "28",
+    "humi_high": "0",
+    "humi_low": "0",
+    "weatid": "1",
+    "weatid1": "",
+    "windid": "7",
+    "winpid": "2",
+    "weather_iconid": "0"
+  }
+}

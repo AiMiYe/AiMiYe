@@ -105,12 +105,14 @@ import sys
 import unittest
 from xml.sax import saxutils
 
+sys.path.append(os.path.split(os.path.dirname(__file__))[0])
 PY3K = (sys.version_info[0] > 2)
 if PY3K:
     import io as StringIO
 else:
     import StringIO
 import copy
+
 
 # ------------------------------------------------------------------------
 # The redirectors below are used to capture output during testing. Output
@@ -126,6 +128,7 @@ import copy
 
 class OutputRedirector(object):
     """ Wrapper to redirect stdout or stderr """
+
     def __init__(self, fp):
         self.fp = fp
 
@@ -931,11 +934,11 @@ class _TestResult(TestResult):
                 if self.trys <= self.retry:
                     if self.save_last_try:
                         t = self.result.pop(-1)
-                        if t[0]==1:
-                            self.failure_count-=1
+                        if t[0] == 1:
+                            self.failure_count -= 1
                         else:
                             self.error_count -= 1
-                    test=copy.copy(test)
+                    test = copy.copy(test)
                     sys.stderr.write("Retesting... ")
                     sys.stderr.write(str(test))
                     sys.stderr.write('..%d \n' % self.trys)
@@ -943,9 +946,9 @@ class _TestResult(TestResult):
                         doc = test._testMethodDoc or ''
                     except Exception:
                         doc = ''
-                    if doc.find('_retry')!=-1:
+                    if doc.find('_retry') != -1:
                         doc = doc[:doc.find('_retry')]
-                    desc ="%s_retry:%d" %(doc, self.trys)
+                    desc = "%s_retry:%d" % (doc, self.trys)
                     if not PY3K:
                         if isinstance(desc, str):
                             desc = desc.decode("utf-8")
@@ -976,7 +979,7 @@ class _TestResult(TestResult):
         _, _exc_str = self.errors[-1]
         output = self.complete_output()
         self.result.append((2, test, output, _exc_str))
-        if not getattr(test, "driver",""):
+        if not getattr(test, "driver", ""):
             pass
         else:
             try:
@@ -998,7 +1001,7 @@ class _TestResult(TestResult):
         _, _exc_str = self.failures[-1]
         output = self.complete_output()
         self.result.append((1, test, output, _exc_str))
-        if not getattr(test, "driver",""):
+        if not getattr(test, "driver", ""):
             pass
         else:
             try:
@@ -1053,12 +1056,12 @@ class HTMLTestRunner(Template_mixin):
         # Here at least we want to group them together by class.
         rmap = {}
         classes = []
-        for n,t,o,e in result_list:
+        for n, t, o, e in result_list:
             cls = t.__class__
             if cls not in rmap:
                 rmap[cls] = []
                 classes.append(cls)
-            rmap[cls].append((n,t,o,e))
+            rmap[cls].append((n, t, o, e))
         r = [(cls, rmap[cls]) for cls in classes]
         return r
 
@@ -1072,7 +1075,7 @@ class HTMLTestRunner(Template_mixin):
         status = []
         if result.success_count: status.append(u'通过 %s' % result.success_count)
         if result.failure_count: status.append(u'失败 %s' % result.failure_count)
-        if result.error_count:   status.append(u'错误 %s' % result.error_count  )
+        if result.error_count:   status.append(u'错误 %s' % result.error_count)
         if status:
             status = ' '.join(status)
         else:
@@ -1156,14 +1159,14 @@ class HTMLTestRunner(Template_mixin):
         ending = self._generate_ending()
         chart = self._generate_chart(result)
         output = self.HTML_TMPL % dict(
-            jsonpath = os.path.split(self.path)[1],
-            title = saxutils.escape(self.title),
-            generator = generator,
-            stylesheet = stylesheet,
-            heading = heading,
-            report = report,
-            ending = ending,
-            chart_script = chart
+            jsonpath=os.path.split(self.path)[1],
+            title=saxutils.escape(self.title),
+            generator=generator,
+            stylesheet=stylesheet,
+            heading=heading,
+            report=report,
+            ending=ending,
+            chart_script=chart
         )
         if PY3K:
             self.stream.write(output.encode())
@@ -1177,14 +1180,14 @@ class HTMLTestRunner(Template_mixin):
         a_lines = []
         for name, value in report_attrs:
             line = self.HEADING_ATTRIBUTE_TMPL % dict(
-                name = saxutils.escape(name),
-                value = saxutils.escape(value),
+                name=saxutils.escape(name),
+                value=saxutils.escape(value),
             )
             a_lines.append(line)
         heading = self.HEADING_TMPL % dict(
-            title = saxutils.escape(self.title),
-            parameters = ''.join(a_lines),
-            description = saxutils.escape(self.description)
+            title=saxutils.escape(self.title),
+            parameters=''.join(a_lines),
+            description=saxutils.escape(self.description)
         )
         return heading
 
@@ -1194,10 +1197,13 @@ class HTMLTestRunner(Template_mixin):
         for cid, (cls, cls_results) in enumerate(sortedResult):
             # subtotal for a class
             np = nf = ne = 0
-            for n,t,o,e in cls_results:
-                if n == 0: np += 1
-                elif n == 1: nf += 1
-                else: ne += 1
+            for n, t, o, e in cls_results:
+                if n == 0:
+                    np += 1
+                elif n == 1:
+                    nf += 1
+                else:
+                    ne += 1
 
             # format class description
             if cls.__module__ == "__main__":
@@ -1208,26 +1214,26 @@ class HTMLTestRunner(Template_mixin):
             desc = doc and '%s: %s' % (name, doc) or name
 
             row = self.REPORT_CLASS_TMPL % dict(
-                style = ne > 0 and 'errorClass' or nf > 0 and 'failClass' or 'passClass',
-                desc = desc,
-                count = np+nf+ne,
-                Pass = np,
-                fail = nf,
-                error = ne,
-                cid = 'c%s' % (cid+1),
+                style=ne > 0 and 'errorClass' or nf > 0 and 'failClass' or 'passClass',
+                desc=desc,
+                count=np + nf + ne,
+                Pass=np,
+                fail=nf,
+                error=ne,
+                cid='c%s' % (cid + 1),
             )
             rows.append(row)
 
-            for tid, (n,t,o,e) in enumerate(cls_results):
+            for tid, (n, t, o, e) in enumerate(cls_results):
                 self._generate_report_test(rows, cid, tid, n, t, o, e)
 
         report = self.REPORT_TMPL % dict(
-            test_list = ''.join(rows),
-            count = str(result.success_count+result.failure_count+result.error_count),
-            Pass = str(result.success_count),
-            fail = str(result.failure_count),
-            error = str(result.error_count),
-            passrate = str("%.2f%%" % (float(result.success_count) /
+            test_list=''.join(rows),
+            count=str(result.success_count + result.failure_count + result.error_count),
+            Pass=str(result.success_count),
+            fail=str(result.failure_count),
+            error=str(result.error_count),
+            passrate=str("%.2f%%" % (float(result.success_count) /
                                      float(result.success_count + result.failure_count + result.error_count) * 100)
                          ),
         )
@@ -1283,14 +1289,14 @@ class HTMLTestRunner(Template_mixin):
             id=tid,
             output=saxutils.escape(uo + ue),
         )
-        if getattr(t,'imgs',[]):
+        if getattr(t, 'imgs', []):
             # 判断截图列表，如果有则追加
             tmp = u""
             for i, img in enumerate(t.imgs):
-                if i==0:
-                    tmp+=""" <img src="data:image/jpg;base64,%s" style="display: block;" class="img"/>\n""" % img
+                if i == 0:
+                    tmp += """ <img src="data:image/jpg;base64,%s" style="display: block;" class="img"/>\n""" % img
                 else:
-                    tmp+=""" <img src="data:image/jpg;base64,%s" style="display: none;" class="img"/>\n""" % img
+                    tmp += """ <img src="data:image/jpg;base64,%s" style="display: none;" class="img"/>\n""" % img
             imgs = self.IMG_TMPL % dict(imgs=tmp)
         else:
             imgs = u"""无截图"""
@@ -1324,6 +1330,7 @@ class TestProgram(unittest.TestProgram):
     A variation of the unittest.TestProgram. Please refer to the base
     class for command line parameters.
     """
+
     def runTests(self):
         # Pick HTMLTestRunner as the default test runner.
         # base class's testRunner parameter is not useful because it means
@@ -1331,6 +1338,7 @@ class TestProgram(unittest.TestProgram):
         if self.testRunner is None:
             self.testRunner = HTMLTestRunner(verbosity=self.verbosity)
         unittest.TestProgram.runTests(self)
+
 
 main = TestProgram
 

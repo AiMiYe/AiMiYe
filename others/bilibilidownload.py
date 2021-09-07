@@ -21,15 +21,15 @@ def start(dir, BV, number):
     if not os.path.exists(dir):
         os.mkdir(dir)
 
-    urls = (f"https://www.bilibili.com/video/{BV}?p={i}" for i in range(187, number + 1))
+    urls = (f"https://www.bilibili.com/video/{BV}?p={i}" for i in range(1, number + 1))
     with ThreadPoolExecutor(max_workers=30 if number > 20 else number) as thread:
         thread.map(down_video, urls)
 
 
 def main():
     dir_path = r"G:\video"
-    bv = "BV1PJ411n7xZ"
-    number = 381
+    bv = "BV1v4411W7LP"
+    number = 89
 
     for _ in range(1):
         start(dir_path, bv, number)

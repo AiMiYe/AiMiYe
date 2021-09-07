@@ -1,16 +1,26 @@
-def decorator(func):
-    def count(a, b):
-        print(f"函数名称： {add.__name__}")
-        func(a, b)
+import os
+import sys
 
-    return count
+sys.path.append(os.path.split(os.path.dirname(__file__))[0])
 
 
-@decorator
-def add(a, b):
-    print(f"函数名称： {add.__name__}")
-    print(f"{a + b}")
+def timers(timer=1):
+    def decorator(func):
+        def count(a, b, *args, **kwargs):
+            print(f"函数名称： {add.__name__}")
+            for i in range(timer):
+                rlt = func(a, b, *args, **kwargs)
+            return rlt
+
+        return count
+
+    return decorator
+
+
+@timers(5)
+def add(a, b, *args, **kwargs):
+    return a + b + sum(args)
 
 
 if __name__ == '__main__':
-    add(1,2)
+    print(add(1, 2, 3, 4, 5, 6, 7, 8, 9))
