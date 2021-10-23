@@ -23,5 +23,8 @@ ELEMENT = os.path.join(ROOT, "data", 'element.ini')
 # json数据文件目录
 JSON = os.path.join(ROOT, "data", 'winter.json')
 
+# yaml数据文件目录
+YAML = os.path.join(ROOT, "data", 'winter.yaml')
+
 # 图片文件目录
 IMG = os.path.join(ROOT, 'image')

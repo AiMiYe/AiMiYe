@@ -6,4 +6,9 @@
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
-**/logs/*
+./logs/
+./image/
+./__pycache__/
+./chapter_02/__pycache__/
+./utils/__pycache__/
+

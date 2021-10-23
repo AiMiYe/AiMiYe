@@ -1,10 +1,11 @@
 import os
 import sys
-import time
 
 sys.path.append(os.path.split(os.path.dirname(__file__))[0])
 from loguru import logger as log
 from selenium_notes.config import LOG
+
+__all__ = ['logger']
 
 
 def get_logger():
