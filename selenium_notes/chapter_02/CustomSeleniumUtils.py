@@ -37,11 +37,8 @@ class CustomSeleniumUtils(object):
         :param url:
         :return:
         """
-        try:
-            self._driver.get(url)
-            logger.info(f"Visit {url}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+        self._driver.get(url)
+        logger.info(f"Visit {url}")
 
     def find_element_by_presence(self, locator: tuple) -> WebElement:
         """
@@ -80,14 +77,12 @@ class CustomSeleniumUtils(object):
         :param text: 文本值
         :return:
         """
-        try:
-            element = self.find_element_by_invisibility(locator)
-            element.clear()
-            logger.info("wipe data")
-            element.send_keys(text)
-            logger.info(f"element {locator} input text {text}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        element = self.find_element_by_invisibility(locator)
+        element.clear()
+        logger.info("wipe data")
+        element.send_keys(text)
+        logger.info(f"element {locator} input text {text}")
 
     def click(self, locator: tuple) -> None:
         """
@@ -95,13 +90,12 @@ class CustomSeleniumUtils(object):
         :param locator:
         :return:
         """
-        try:
-            self.find_element_by_invisibility(locator).click()
-            logger.info(f"Click on the {locator} element")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
 
-    def stop(self, seconds: int):
+        self.find_element_by_invisibility(locator).click()
+        logger.info(f"Click on the {locator} element")
+
+    @staticmethod
+    def stop(seconds: int):
         """
         睡眠时间
         :param seconds:
@@ -115,22 +109,18 @@ class CustomSeleniumUtils(object):
         浏览器窗口最大化
         :return:
         """
-        try:
-            self._driver.maximize_window()
-            logger.info("maximize the browser window")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.maximize_window()
+        logger.info("maximize the browser window")
 
     def min_window(self) -> None:
         """
         浏览器窗口最小化
         :return:
         """
-        try:
-            self._driver.minimize_window()
-            logger.info("minimize the browser window")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.minimize_window()
+        logger.info("minimize the browser window")
 
     def set_window_size(self, size: tuple) -> None:
         """
@@ -138,11 +128,9 @@ class CustomSeleniumUtils(object):
         :param size: (宽度, 高度)
         :return:
         """
-        try:
-            self._driver.set_window_size(*size)
-            logger.info("set the current browser width and height")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.set_window_size(*size)
+        logger.info("set the current browser width and height")
 
     def set_window_position(self, position: tuple) -> None:
         """
@@ -150,89 +138,73 @@ class CustomSeleniumUtils(object):
         :param position: (x, y)
         :return:
         """
-        try:
-            self._driver.set_window_position(*position)
-            logger.info("set the position of browser in the screen")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.set_window_position(*position)
+        logger.info("set the position of browser in the screen")
 
     def refresh(self) -> None:
         """
         刷新浏览器窗口
         :return:
         """
-        try:
-            self._driver.refresh()
-            logger.info("refresh the browser window")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.refresh()
+        logger.info("refresh the browser window")
 
     def forward(self) -> None:
         """
         浏览器前进
         :return:
         """
-        try:
-            self._driver.forward()
-            logger.info("browser forward")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.forward()
+        logger.info("browser forward")
 
     def back(self) -> None:
         """
         浏览器后退
         :return:
         """
-        try:
-            self._driver.back()
-            logger.info("browser back")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.back()
+        logger.info("browser back")
 
     def get_page_source(self) -> str:
         """
         获取当前页面源码
         :return:
         """
-        try:
-            logger.info("get the page source")
-            return self._driver.page_source
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        logger.info("get the page source")
+        return self._driver.page_source
 
     def quit(self) -> None:
         """
         退出浏览器
         :return:
         """
-        try:
-            self._driver.quit()
-            logger.info("exit browser")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.quit()
+        logger.info("exit browser")
 
     def close(self) -> None:
         """
         关闭浏览器当前table页
         :return:
         """
-        try:
-            self._driver.close()
-            logger.info("close the current table page of the browser")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.close()
+        logger.info("close the current table page of the browser")
 
     def get_all_cookies(self) -> list:
         """
         获取所有cookies
         :return: [{cookie_1},{cookie_2}]
         """
-        try:
-            cookies = self._driver.get_cookies()
-            logger.info(f"get all cookies: {cookies}")
-            return cookies
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        cookies = self._driver.get_cookies()
+        logger.info(f"get all cookies: {cookies}")
+        return cookies
 
     def get_cookie(self, name: str) -> dict:
         """
@@ -240,12 +212,10 @@ class CustomSeleniumUtils(object):
         :param name: cookie名称
         :return: dict
         """
-        try:
-            cookie = self._driver.get_cookie(name)
-            logger.info(f"get cookie name: {name} value: {cookie}")
-            return cookie
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        cookie = self._driver.get_cookie(name)
+        logger.info(f"get cookie name: {name} value: {cookie}")
+        return cookie
 
     def set_cookie(self, cookie: dict) -> None:
         """
@@ -253,23 +223,19 @@ class CustomSeleniumUtils(object):
         :param cookie: dict
         :return:
         """
-        try:
-            self._driver.add_cookie(cookie)
-            logger.info(f"set cookie: {cookie}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.add_cookie(cookie)
+        logger.info(f"set cookie: {cookie}")
 
     def delete_all_cookies(self) -> None:
         """
         删除所有cookie
         :return:
         """
-        try:
-            self.get_all_cookies()
-            self._driver.delete_all_cookies()
-            logger.info(f"delete all cookies")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self.get_all_cookies()
+        self._driver.delete_all_cookies()
+        logger.info(f"delete all cookies")
 
     def delete_cookie(self, cookie) -> None:
         """
@@ -277,49 +243,41 @@ class CustomSeleniumUtils(object):
         :param cookie:
         :return:
         """
-        try:
-            self.get_cookie(cookie)
-            self._driver.delete_cookie(cookie)
-            logger.info(f"delete cookie: {cookie}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self.get_cookie(cookie)
+        self._driver.delete_cookie(cookie)
+        logger.info(f"delete cookie: {cookie}")
 
     def get_current_url(self) -> str:
         """
         获取当前URL
         :return:
         """
-        try:
-            self.stop(1)
-            url = self._driver.current_url
-            logger.info(f"url: {url}")
-            return url
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self.stop(1)
+        url = self._driver.current_url
+        logger.info(f"url: {url}")
+        return url
 
     def get_current_window_handle(self) -> str:
         """
         获取当前浏览器table页句柄
         :return:
         """
-        try:
-            handle = self._driver.current_window_handle
-            logger.info(f"handle: {handle}")
-            return str(handle)
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        handle = self._driver.current_window_handle
+        logger.info(f"handle: {handle}")
+        return str(handle)
 
     def get_all_window_handles(self) -> list:
         """
         获取当前浏览器所有table页句柄
         :return:
         """
-        try:
-            handles = self._driver.window_handles
-            logger.info(f"handles: {handles}")
-            return handles
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        handles = self._driver.window_handles
+        logger.info(f"handles: {handles}")
+        return handles
 
     def switch_to_window_handle(self, index: int) -> None:
         """
@@ -327,29 +285,25 @@ class CustomSeleniumUtils(object):
         :param index: 从0开始的table索引
         :return:
         """
-        try:
-            handle = int(index)
-            handles = self.get_all_window_handles()
-            self._driver.switch_to.window(handles[handle])
-            logger.info(f"switch to {handles[handle]} window handle")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        handle = int(index)
+        handles = self.get_all_window_handles()
+        self._driver.switch_to.window(handles[handle])
+        logger.info(f"switch to {handles[handle]} window handle")
 
     def auto_switch_to_window_handle(self) -> None:
         """
         如果浏览器句柄有且仅有2个，自动切换为另一个
         :return:
         """
-        try:
-            handles = self.get_all_window_handles()
-            if len(handles) != 2:
-                logger.info(f"handles length is not equal to 2 handles: {handles}")
-                return
-            for i in handles:
-                if i != self.get_current_window_handle():
-                    self._driver.switch_to.window(i)
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        handles = self.get_all_window_handles()
+        if len(handles) != 2:
+            logger.info(f"handles length is not equal to 2 handles: {handles}")
+            return
+        for i in handles:
+            if i != self.get_current_window_handle():
+                self._driver.switch_to.window(i)
 
     def save_screenshot_as_file(self, file_name: str) -> None:
         """
@@ -357,26 +311,22 @@ class CustomSeleniumUtils(object):
         :param file_name: png文件路径
         :return:
         """
-        try:
-            rlt = self._driver.save_screenshot(file_name)
-            if rlt:
-                logger.info("the screenshot file was saved successfully")
-            else:
-                logger.info("failed to save screenshot file")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        rlt = self._driver.save_screenshot(file_name)
+        if rlt:
+            logger.info("the screenshot file was saved successfully")
+        else:
+            logger.info("failed to save screenshot file")
 
     def save_screenshot_as_base64(self) -> str:
         """
         保存当前浏览器屏幕为base64编码的字符串
         :return:
         """
-        try:
-            img = self._driver.get_screenshot_as_base64()
-            logger.info(f"base64: {img}")
-            return img
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        img = self._driver.get_screenshot_as_base64()
+        logger.info(f"base64: {img}")
+        return img
 
     def save_element_screenshot_as_file(self, locator: tuple, image_path: str):
         """
@@ -385,31 +335,29 @@ class CustomSeleniumUtils(object):
         :param image_path:
         :return:
         """
-        try:
-            if not os.path.exists(image_path):
-                os.mkdir(image_path)
-            file = os.path.join(image_path, f"{time.strftime('%Y%m%d%H%M%S', time.localtime())}.png")
-            ele = os.path.join(image_path, f"{locator[0]}_{locator[1]}_{time.strftime('%H%M%S', time.localtime())}.png")
-            self.save_screenshot_as_file(file)
-            element = self.find_element_by_invisibility(locator)
 
-            location = element.location
-            logger.info(f"get element: {locator} position")
-            size = element.size
-            logger.info(f"get element: {locator} size")
-            left = location['x']
-            logger.info(f"left: {left}")
-            top = location['y']
-            logger.info(f"top: {top}")
-            right = left + size['width']
-            logger.info(f"right: {right}")
-            bottom = top + size['height']
-            logger.info(f"bottom: {bottom}")
-            im = Image.open(file)
-            im = im.crop((left, top, right, bottom))
-            im.save(ele)
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+        if not os.path.exists(image_path):
+            os.mkdir(image_path)
+        file = os.path.join(image_path, f"{time.strftime('%Y%m%d%H%M%S', time.localtime())}.png")
+        ele = os.path.join(image_path, f"{locator[0]}_{locator[1]}_{time.strftime('%H%M%S', time.localtime())}.png")
+        self.save_screenshot_as_file(file)
+        element = self.find_element_by_invisibility(locator)
+
+        location = element.location
+        logger.info(f"get element: {locator} position")
+        size = element.size
+        logger.info(f"get element: {locator} size")
+        left = location['x']
+        logger.info(f"left: {left}")
+        top = location['y']
+        logger.info(f"top: {top}")
+        right = left + size['width']
+        logger.info(f"right: {right}")
+        bottom = top + size['height']
+        logger.info(f"bottom: {bottom}")
+        im = Image.open(file)
+        im = im.crop((left, top, right, bottom))
+        im.save(ele)
 
     def execute_script(self, script: str) -> str:
         """
@@ -417,25 +365,21 @@ class CustomSeleniumUtils(object):
         :param script:
         :return:
         """
-        try:
-            rlt = self._driver.execute_script(script)
-            if rlt:
-                return rlt
-            return self._driver.execute_script(script)
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        rlt = self._driver.execute_script(script)
+        if rlt:
+            return rlt
+        return self._driver.execute_script(script)
 
     def _switch_to_alert(self) -> Alert:
         """
         等待alert出现，并且切换进去
         :return:
         """
-        try:
-            alert = WebDriverWait(self._driver, self._timeout, 1).until(EC.alert_is_present())
-            logger.info("switch to alert")
-            return alert
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        alert = WebDriverWait(self._driver, self._timeout, 1).until(EC.alert_is_present())
+        logger.info("switch to alert")
+        return alert
 
     def alert_dismiss(self) -> None:
         """
@@ -480,61 +424,46 @@ class CustomSeleniumUtils(object):
         :param locator: iframe元素定位器
         :return:
         """
-        try:
-            rlt = WebDriverWait(self._driver, self._timeout, 1).until(
-                EC.frame_to_be_available_and_switch_to_it(locator))
-            if rlt:
-                logger.info(f"switch to iframe: {locator}")
-            else:
-                logger.info(f"switch to iframe failure")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        rlt = WebDriverWait(self._driver, self._timeout, 1).until(
+            EC.frame_to_be_available_and_switch_to_it(locator))
+        if rlt:
+            logger.info(f"switch to iframe: {locator}")
+        else:
+            logger.info(f"switch to iframe failure")
 
     def switch_to_parent_frame(self) -> None:
         """
         切换至上一层级iframe/frame
         :return:
         """
-        try:
-            self._driver.switch_to.parent_frame()
-            logger.info("switch to parent frame")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.switch_to.parent_frame()
+        logger.info("switch to parent frame")
 
     def switch_out_all_iframe(self) -> None:
         """
         切换出所有层级的iframe/frame
         :return:
         """
-        try:
-            self._driver.switch_to.default_content()
-            logger.info("switch out all iframe")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+
+        self._driver.switch_to.default_content()
+        logger.info("switch out all iframe")
 
     def mouse_left_click(self, locator) -> None:
-        try:
-            element = self.find_element_by_invisibility(locator)
-            ActionChains(self._driver).click(element).perform()
-            logger.info(f"mouse left click element: {locator}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+        element = self.find_element_by_invisibility(locator)
+        ActionChains(self._driver).click(element).perform()
+        logger.info(f"mouse left click element: {locator}")
 
     def mouse_right_click(self, locator) -> None:
-        try:
-            element = self.find_element_by_invisibility(locator)
-            ActionChains(self._driver).context_click(element).perform()
-            logger.info(f"mouse right click element: {locator}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+        element = self.find_element_by_invisibility(locator)
+        ActionChains(self._driver).context_click(element).perform()
+        logger.info(f"mouse right click element: {locator}")
 
     def mouse_left_double_click(self, locator) -> None:
-        try:
-            element = self.find_element_by_invisibility(locator)
-            ActionChains(self._driver).double_click(element).perform()
-            logger.info(f"mouse left double click element: {locator}")
-        except Exception as _:
-            logger.exception(CustomSeleniumUtils.__error_code)
+        element = self.find_element_by_invisibility(locator)
+        ActionChains(self._driver).double_click(element).perform()
+        logger.info(f"mouse left double click element: {locator}")
 
     def mouse_move_to_element(self, locator) -> None:
         pass

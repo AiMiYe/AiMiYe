@@ -7,9 +7,9 @@ sys.path.append(os.path.split(os.path.dirname(__file__))[0])
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # 驱动程序路径
-CHROME_DRIVER = os.path.join(ROOT, "drivers", "chromedriver89.exe")
+CHROME_DRIVER = os.path.join(ROOT, "drivers", "chromedriver.exe")
 FIREFOX_DRIVER = os.path.join(ROOT, "drivers", "geckodriver.exe")
-EDGE_DRIVER = os.path.join(ROOT, "drivers", "msedgedriver90.exe")
+EDGE_DRIVER = os.path.join(ROOT, "drivers", "msedgedriver.exe")
 
 # 日志目录
 LOG = os.path.join(ROOT, "logs")

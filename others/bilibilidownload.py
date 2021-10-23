@@ -28,8 +28,8 @@ def start(dir, BV, number):
 
 def main():
     dir_path = r"G:\video"
-    bv = "BV1v4411W7LP"
-    number = 89
+    bv = "BV1J64y187cP"
+    number = 99
 
     for _ in range(1):
         start(dir_path, bv, number)

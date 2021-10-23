@@ -1,3 +1,4 @@
+
 from selenium_notes.config import *
 from selenium_notes.utils.handle_ini import HandleIni
 from selenium_notes.chapter_02.CustomSeleniumUtils import CustomSeleniumUtils
