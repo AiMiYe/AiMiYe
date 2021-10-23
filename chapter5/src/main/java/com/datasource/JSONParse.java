@@ -47,7 +47,6 @@ public class JSONParse {
     }
 
     /**
-     *
      * @param jsonPath jsonPath 表达式
      * @return 返回所有匹配到的值 程序异常值返回 null
      */
