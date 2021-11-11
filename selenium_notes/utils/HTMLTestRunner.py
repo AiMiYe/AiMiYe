@@ -1251,7 +1251,7 @@ class HTMLTestRunner(Template_mixin):
         # e.g. 'pt1.1', 'ft1.1', etc
         has_output = bool(o or e)
         tid = (n == 0 and 'p' or 'f') + 't%s.%s' % (cid + 1, tid + 1)
-        name = t.id().split('.')[-1]
+        name = t.pid().split('.')[-1]
         if self.verbosity > 1:
             doc = t._testMethodDoc or ''
         else:

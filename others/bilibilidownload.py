@@ -14,7 +14,7 @@ def down_video(url):
         url ([type]): [description]
     """
     print(url)
-    os.system(f"you-get -o G:\\video {url}")
+    os.system(f"you-get -o L:\\video {url}")
 
 
 def start(dir, BV, number):
@@ -27,9 +27,9 @@ def start(dir, BV, number):
 
 
 def main():
-    dir_path = r"G:\video"
-    bv = "BV1J64y187cP"
-    number = 99
+    dir_path = r"L:\video"
+    bv = "BV1HU4y1n7CP"
+    number = 750
 
     for _ in range(1):
         start(dir_path, bv, number)

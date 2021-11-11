@@ -10,6 +10,7 @@ class JSONSelector(object):
     """
     json格式数据提取器
     """
+
     def __init__(self, string: str):
         self.__json_ojb = json.loads(string)
 
